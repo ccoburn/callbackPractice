@@ -125,6 +125,15 @@ each(names, function(item, indice){
 // and returns that user.
 
  //Code Here
+ function getUserById(array, value, cb) {
+
+   for (var i = 0; i < array.length; i++) {
+     if (array[i].id === value) {
+       return cb(array[i]);
+
+     }
+   }
+ }
 
 var users = [
   {
