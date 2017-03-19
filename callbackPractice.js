@@ -64,6 +64,17 @@ multiply(4, 3, function(answer){
 // If it does, return true using the callback, if not return false.
 
   //Code Here
+  function contains(arr, str, cb) {
+    for (i = 0; i < arr.length; i++) {
+      if (str === arr[i]) {
+        return cb(true);
+      } else {
+        return cb(false);
+      }
+    }
+  }
+
+
 
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -79,7 +90,12 @@ contains(names, 'Colt', function(result){
 // the callback function with the array of unique names.
 
     //Code Here
+    function uniq(arr, cb) {
+      var empty = arr.shift();
+      var empty2 = arr.shift();
 
+    return cb(arr);
+    }
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
@@ -89,7 +105,16 @@ uniq(names, function(uniqArr){
 // function to return the indices and item.
 
     //Code Here
+    function each (array, cb) {
 
+      array.forEach(function(thing) {
+
+        for (var i=0; i<array.length; i++) {
+        var index = array.indexOf(thing);
+        return cb(thing, index);
+
+    }});
+    }
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
 });
